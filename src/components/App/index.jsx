@@ -9,30 +9,28 @@ import { useState } from 'react';
   const [expenses, setExpenses] = useState ([
     {
       id: 1,
-      cost: '5600',
+      cost: 5600,
       category: 'Автомобиль',
       payment: 'Карта',
     },
     {
       id: 2,
-      cost: '3800',
+      cost: 3800,
       category: 'Еда',
       payment: 'Наличные',
     },
     {
       id: 3,
-      cost: '8000',
+      cost: 8000,
       category: 'Одежда',
       payment: 'Карта',
     },
     {
       id: 4,
-      cost: '7500',
-      category: 'Автомобиль',
+      cost: 12000,
+      category: 'Обучение',
       payment: 'Карта',
-    }
-
-    
+    }  
   ])
  
   let sum = 0;
@@ -45,16 +43,19 @@ import { useState } from 'react';
     setExpenses([...expenses,expense])
   }
 
-  const categoryArrays = Object.values (groupBy(expenses,'category'))
-  categoryArrays.forEach((categoryArray) => {
-    console.log (categoryArray)
-    let eachCategory
-  })
+  // const categoryArrays = Object.values (groupBy(expenses,'category'))
+  // categoryArrays.forEach((categoryArray) => {
+  //   console.log (categoryArray)
+  //   let eachCategory
+  // })
   return (
-    <div>
+    <div className='max-w-xl mx-auto bg-green-100 shadow-md rounded-md mt-10 px-6 py-2'>
       <ExpenseForm addExpense={addExpense} />
       <Chart />
-      <Expense key={expense.id} expense={expense} />
+      {expenses.map((expense) => 
+        <Expense key={expense.id} expense={expense} />
+      )}
+      
     </div>
     
   );

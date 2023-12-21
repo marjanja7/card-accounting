@@ -10,7 +10,7 @@ const categories = unsortedСategories.sort();
 const ExpenseForm = ({ addExpense }) => {
   const [cost, setCost] = useState("");
   const [category, setCategory] = useState(categories[0]);
-  const [payment, setPayment] = useState (payment[0]);
+  const [payment, setPayment] = useState (payments[0]);
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -30,45 +30,47 @@ const ExpenseForm = ({ addExpense }) => {
 
   return (
       <div>
-        <form className='max-w-xl mx-auto bg-gray-50 shadow-md rounded-md mt-10 px-6 py-2'>
-          <h1 className='pt-40 text-center text-5xl text-indigo-700'>Учет расходов</h1>
+        <form >
+          <h1 className='text-center mx-auto my-12 text-3xl font-extrabold tracking-tight text-gray-900'>Учет расходов</h1>
+              
               <div className= 'grid grid-cols-5 mt-6 gap-x-4 rounded-md'>
-                  <label className='col-span-2'>Сумма</label>
+                  <label className='col-span-1'>
                   <input 
                       onChange={(event) => setCost(event.target.value)}
                       value={cost}
                       name="cost" 
                       type="text" 
-                      className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm" />
-              </div>
+                      className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm" placeholder="00.00"></input>
+                  </label>
               
-              <div className= 'grid grid-cols-5 mt-6 gap-x-4 rounded-md'>
-                  <label className='col-span-2'>Категория</label>
+              
+              
+                  <label className='col-span-2'>
                   <div className='relative'>
                       <select 
                           value={category}
                           onChange={event => setCategory(event.target.value)}
-                          className="col-span-2 border border-solid border-grey-400 rounded">
+                          className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm">
                           {categories.map(category => (
                               <option key={category}>{category}</option>
                           ))}
                       </select>
-                  
-                  </div>
-              </div>
-              <div className= 'grid grid-cols-5 mt-6 gap-x-4 rounded-md'>
-                  <label className='col-span-2'>Способ оплаты</label>
+                      </div>
+                  </label>
+                
+                  <label className='col-span-2'>
                   <div className='relative'>
                       <select 
                           value={payment}
                           onChange={event => setPayment(event.target.value)}
-                          className="col-span-2 border border-solid border-grey-400 rounded">
+                          className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm">
                           {payments.map(payment => (
                               <option key={payment}>{payment}</option>
                           ))}
                       </select>
+                      </div>
+                      </label>
                   
-                  </div>
               </div>
               <div className='col-span-1 '>
                   <Button title='Добавить' handleClick={handleClick} type='submit'/>

@@ -42,6 +42,7 @@
         "#ffc658",
       ];
       return (
+        <div className='flex mt-10'>
         <div>
           <PieChart width={600} height={300}>
             <Pie data={data}
@@ -58,6 +59,12 @@
             ))}
             </Pie>
           </PieChart>
+        </div>
+        <div className='mt-10 ml-10 flex flex-col gap-y-2'>
+          <div className='bg-blue-200 text-blue-800 rounded-full px-4'>{data.name} - </div>
+
+        </div>
+
         </div>
       )
     }
