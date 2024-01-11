@@ -31,15 +31,19 @@ const ExpenseForm = ({ addExpense }) => {
   return (
       <div>
         <form >
-          <h1 className='text-center mx-auto my-12 text-3xl font-extrabold tracking-tight text-gray-900'>Учет расходов</h1>
+          <h1 className='text-center mx-auto my-12 text-3xl font-extrabold tracking-tight text-gray-700'>Учет расходов</h1>
               
               <div className= 'grid grid-cols-5 mt-6 gap-x-4 rounded-md'>
                   <label className='col-span-1'>
                   <input 
                       onChange={(event) => setCost(event.target.value)}
                       value={cost}
+                      
+
                       name="cost" 
-                      type="text" 
+                      type="text"
+                      onkeypress='return /[0-9]/i.test(event.key)'
+
                       className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm" placeholder="00.00"></input>
                   </label>
               

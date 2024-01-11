@@ -1,36 +1,16 @@
   import { PieChart, Pie, Cell } from 'recharts';
+  import React, {PureComponent} from 'react';
 
 
     const Chart = () => {
       const data = [
-        {
-          value: 1,
-          name: 'Автомобиль',
-        },
-        {
-          value: 2,
-          name: 'Продукты',
-        },
-        {
-          value: 3,
-          name: 'Обучение'
-        },
-        {
-          value: 4,
-          name: 'Одежда'
-        },
-        {
-          value: 5,
-          name: 'Путешествия'
-        },
-        {
-          value: 6,
-          name: 'Развлечения'
-        },
-        {
-          value: 7,
-          name: 'Другое'
-        },
+        { value: 1, name: 'Автомобиль'},
+        { value: 2, name: 'Продукты' },
+        { value: 3, name: 'Обучение' },
+        { value: 4, name: 'Одежда' },
+        { value: 5, name: 'Путешествия' },
+        { value: 6, name: 'Развлечения' },
+        { value: 7, name: 'Другое' }
       ];
       const COLORS =[
         "#8884d8",
@@ -39,8 +19,9 @@
         "#82ca9d",
         "#a4de6c",
         "#d0ed57",
-        "#ffc658",
+        "#ffc658"
       ];
+      
       return (
         <div className='flex mt-10'>
         <div>
@@ -61,7 +42,7 @@
           </PieChart>
         </div>
         <div className='mt-10 ml-10 flex flex-col gap-y-2'>
-          <div className='bg-blue-200 text-blue-800 rounded-full px-4'>{data.name} - </div>
+          <div className='bg-blue-200 text-blue-800 rounded-full px-4'>{data.name}</div>
 
         </div>
 
