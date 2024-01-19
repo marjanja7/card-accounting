@@ -11,7 +11,8 @@ const ExpensesPage = () => {
         return sum;
       });
     
-      const [expenses, setExpenses] = useState    
+      const [expenses, setExpenses] = useState;    
+const [filtered, setFiltered] = useState (expenses);
 
    const paymentFilter = (payment) => {
     if (payment === 'all') {

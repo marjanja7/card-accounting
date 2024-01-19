@@ -3,6 +3,7 @@ import Button from "components/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format, compareAsc } from "date-fns";
+import { ru } from "date-fns/locale";
 
 const unsortedСategories = ["Еда","Одежда","Обучение","Путешествия","Развлечения","Автомобиль","Другое",];
 const payments = ["Наличные", "Карта"];
