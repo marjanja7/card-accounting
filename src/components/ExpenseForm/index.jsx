@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Button from "components/Button";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { format, compareAsc } from "date-fns";
 
 const unsortedСategories = ["Еда","Одежда","Обучение","Путешествия","Развлечения","Автомобиль","Другое",];
 const payments = ["Наличные", "Карта"];
@@ -11,6 +14,7 @@ const ExpenseForm = ({ addExpense }) => {
   const [cost, setCost] = useState("");
   const [category, setCategory] = useState(categories[0]);
   const [payment, setPayment] = useState (payments[0]);
+  const [startDate, setStartDate] = useState(new Date());
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -18,7 +22,8 @@ const ExpenseForm = ({ addExpense }) => {
     const expense = {
       cost,
       category,
-      payment
+      payment,
+      date
     }
     console.log(expense)
 
@@ -28,15 +33,35 @@ const ExpenseForm = ({ addExpense }) => {
     setPayment('')
   }
 
+  const onChange=(event) => {
+    const oldValue = event.target.value
+    const newValue = oldValue.replace(/\D+/,'')
+
+    setCost(newValue)
+  }
   return (
       <div>
         <form >
-          <h1 className='text-center mx-auto my-12 text-3xl font-extrabold tracking-tight text-gray-700'>Учет расходов</h1>
+          
               
               <div className= 'grid grid-cols-5 mt-6 gap-x-4 rounded-md'>
+
+              <label className='col-span-1'>
+                  <DatePicker
+                  selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                      locale={ru}
+                      dateFormat='dd.MM.yyyy'
+                      placeholderText='Введите дату'
+                      className= 'border border-solid border-gray-300 rounded w-fit '
+                      />
+
+                      
+                  </label>
+
                   <label className='col-span-1'>
                   <input 
-                      onChange={(event) => setCost(event.target.value)}
+                      onChange={onChange}
                       value={cost}
                       
 

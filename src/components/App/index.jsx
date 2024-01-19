@@ -1,7 +1,7 @@
 import 'components/App/App.css';
-import Chart from 'components/Chart';
-import ExpenseForm from 'components/ExpenseForm';
-import Expense from 'components/Expense';
+import 'components/ExpensesPage';
+import 'components/IncomePage';
+import 'components/Header';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 
  function App () {
@@ -14,15 +14,16 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom';
   //   let eachCategory
   // })
   return (
-    <div className='max-w-xl mx-auto bg-green-100 shadow-md rounded-md mt-10 px-6 py-2'>
-      <ExpenseForm addExpense={addExpense} />
-      <Chart />
-      {expenses.map((expense) => 
-        <Expense key={expense.id} expense={expense} />
-      )}
-      
+    <BrowserRouter>
+      <div className='max-w-xl mx-auto bg-green-100 shadow-md rounded-md mt-10 px-6 py-2'>
+        <Header/>
+        <Routes>
+          <Route path= '/expenses' element={<ExpensesPage/>} />
+          <Route path= '/income' element={<IncomePage />} />
+          
+       </Routes>
     </div>
-    
+    </BrowserRouter>
   );
 }
 export default App;
