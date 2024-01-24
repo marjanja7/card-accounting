@@ -1,5 +1,5 @@
   import { PieChart, Pie, Cell } from 'recharts';
-  import React, {PureComponent} from 'react';
+  
 
 
     const Chart = () => {
@@ -29,11 +29,13 @@
             <Pie data={data}
                  cx={120}
                  cy={150}
+                 labelLine={true}
+                 label={({category,cost}) => `${category}: ${cost} `}
                  innerRadius={0}
-                 outerRadius={100}
+                 outerRadius={75}
                  fill='#8884d8'
                  paddingAngle={1}
-                 dataKey="value"
+                 dataKey="cost"
             >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

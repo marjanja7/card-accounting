@@ -1,49 +1,22 @@
 import Chart from 'components/Chart';
 import ExpenseForm from 'components/ExpenseForm';
 import Expense from 'components/Expense';
-import { useState } from 'react';
+import ExpenseFilter from 'components/ExpenseFilter';
+
 
 const ExpensesPage = () => {
 
-  let sum = 0;
-      expenses.forEach (function (expense) {
-        sum += parseInt (expense.cost);
-        return sum;
-      });
-    
-      const [expenses, setExpenses] = useState;    
-const [filtered, setFiltered] = useState (expenses);
-
-   const paymentFilter = (payment) => {
-    if (payment === 'all') {
-      setFiltered(expenses);
-    } else {
-      let newExpenses = [...expenses].filter((expense) =>expense.payment === payment);
-      setFiltered(newExpenses);
-    }
-    };
-
-    const categoryFilter = (category) => {
-      if (category === 'all') {
-        setFiltered (expenses);
-        } else {
-          let newExpenses = [...expenses].filter(
-            (expense) => expense.category === category,
-          );
-          setFiltered (newExpenses);
-        }
-    };
-
   
-
-
+   
 return (
-    <div>
+    <div className='flex flex-col'>
           <ExpenseForm  />
+
           <Chart />
-          {expenses.map((expense) => 
-            <Expense key={expense.id} expense={expense} />
-          )} 
+          <ExpenseFilter/>
+          
+            <Expense />
+          
     </div>
           )   
   }

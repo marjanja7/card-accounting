@@ -1,7 +1,7 @@
 import 'components/App/App.css';
-import 'components/ExpensesPage';
-import 'components/IncomePage';
-import 'components/Header';
+import ExpensesPage from 'components/ExpensesPage';
+import IncomePage from 'components/IncomePage';
+import Header from 'components/Header';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 
  function App () {
@@ -19,7 +19,7 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom';
         <Header/>
         <Routes>
           <Route path= '/expenses' element={<ExpensesPage/>} />
-          <Route path= '/income' element={<IncomePage />} />
+          <Route path= '/income' element={<IncomePage />} /> 
           
        </Routes>
     </div>

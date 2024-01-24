@@ -7,16 +7,16 @@ import Window from "components/Window";
 
 
 // const today = new Date ()
-const unsortedСategories = ["Еда","Одежда","Обучение","Путешествия","Развлечения","Автомобиль","Другое",];
+const arrayСategories = ["Зарплата","Премия","Аренда","Алименты","Инвестиции"];
 const payments = ["Наличные", "Карта"];
 
 
-const categories = unsortedСategories.sort();
+const incomeCategories = arrayСategories.sort();
 
 
-const ExpenseForm = ({ addExpense }) => {
+const IncomeForm = ({ addIncome }) => {
   const [cost, setCost] = useState("");
-  const [category, setCategory] = useState(categories[0]);
+  const [category, setCategory] = useState(incomeCategories[2]);
   const [payment, setPayment] = useState (payments[0]);
   const [startDate, setStartDate] = useState(new Date());
   const [id, setId] = useState();
@@ -28,19 +28,19 @@ const ExpenseForm = ({ addExpense }) => {
     event.preventDefault();
     
     if (cost && category && payment && startDate) {
-      const expense = {
+      const income = {
         id,
         cost,
-        category,
+        incomecategory: category,
         payment,
         date: startDate,
     };
-    console.log(expense)
+    console.log(income)
 
-    addExpense(expense);
+    addIncome(income);
     setId();
     setCost('');
-    setCategory(categories[0]);
+    setCategory(incomeCategories[2]);
     setPayment(payments[0]);
     setStartDate();
     setWarning(false);
@@ -96,7 +96,7 @@ const ExpenseForm = ({ addExpense }) => {
                           value={category}
                           onChange={event => setCategory(event.target.value)}
                           className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 sm:text-sm">
-                          {categories.map((category) => (
+                          {incomeCategories.map((category) => (
                               <option key={category}>{category}</option>
                     ))}
                       </select>
@@ -120,9 +120,9 @@ const ExpenseForm = ({ addExpense }) => {
               <div className='col-span-1 '>
                   <Button title='Добавить' handleClick={handleClick} type='submit'/>
               </div>
-              <Window warning={warning} setWarning={setWarning} />
+          <Window warning={warning} setWarning={setWarning} />
     </form>  
    </div> 
 )
 }
-export default ExpenseForm;
+export default IncomeForm;
