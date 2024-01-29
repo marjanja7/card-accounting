@@ -1,7 +1,5 @@
-import { useState } from 'react';
 
-
-const Income = () => {
+const Income = (incomes, income) => {
 
     return (
       <>
@@ -22,4 +20,4 @@ const Income = () => {
       </>
     )
 }
-export default Income
+export default Income;

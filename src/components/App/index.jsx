@@ -13,8 +13,8 @@ import { BrowserRouter, Routes,Route } from 'react-router-dom';
         <Routes>
           <Route path= '/' element={<HomePage/>} />
           <Route path= '/expenses' element={<ExpensesPage/>} />
-          <Route path= '/income' element={<IncomePage />} /> 
-          
+          {/* <Route path= '/income' element={<IncomePage />} /> 
+           */}
        </Routes>
        </div>
     </BrowserRouter>
