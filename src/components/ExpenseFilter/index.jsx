@@ -3,7 +3,7 @@ import { useState } from "react";
 const ExpenseFilter = ({expenses, setExpenses}) => {
     const [filteredExpenses, setFilteredExpenses] = useState (expenses);
     const [selectedCategory,setSelectedCategory] = useState (null);
-    const [selectedPayment, setSelectedPayment] = useState (all);
+    const [selectedPayment, setSelectedPayment] = useState ('all');
 
     const resetFilters = () => {
         setFilteredExpenses(expenses)
@@ -32,7 +32,7 @@ const ExpenseFilter = ({expenses, setExpenses}) => {
                 return true
             }
             return expense.payment === payment
-            setFiltered(newExpenses);
+            setFilteredExpenses(newFilteredExpenses);
           });
           setFilteredExpenses (newFilteredExpenses)
           setSelectedCategory (null)

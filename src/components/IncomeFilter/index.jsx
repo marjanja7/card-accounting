@@ -12,10 +12,7 @@ const IncomeFilter = () => {
         
 const [filtered, setFiltered] = useState (incomes);
 income
-    const addIncome = (income => {
-      const newIncomes = [...incomes, income];
-      setIncomes (newIncomes);
-    })
+    
 
    const paymentFilter = (payment) => {
     if (payment === 'all') {

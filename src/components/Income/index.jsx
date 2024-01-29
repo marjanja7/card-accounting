@@ -3,42 +3,6 @@ import { useState } from 'react';
 
 const Income = () => {
 
-     const [income] = useState ([
-        {
-          id: 1,
-          cost: 50200,
-          category: 'Зарплата',
-          payment: 'Карта',
-          date: new Date(2023, 11, 24),
-        },
-        {
-          id: 2,
-          cost: 38000,
-          category: 'Премия',
-          payment: 'Наличные',
-          date: new Date(2023, 11, 25),
-        },
-        {
-          id: 3,
-          cost: 8000,
-          category: 'Проценты',
-          payment: 'Карта',
-          date: new Date(2023, 11, 24),
-        },
-        {
-          id: 4,
-          cost: 15000,
-          category: 'Аренда',
-          payment: 'Карта',
-          date: new Date(2023, 11, 25),
-        }  
-      ])
-     
-      
-
-      
-   
-
     return (
       <>
       {income.map((income) => (
