@@ -36,10 +36,10 @@ const Restaurants = () => {
                              <div className="text-xl text-white bg-orange-400 mb-2 font-bold">{restaurant?.name}</div>
                              <p className="text-centr text-sm leading-5 text-grey-500">{restaurant?.description}</p>
                              <Link to={`/restaurant/${restaurant.slug}`}>
-                                <Button/>
-                                 {/* <button className="leading-5 bg-orange-500 rounded text-white text-xl shadow-md py-2">
+                               
+                                <button className="leading-5 bg-orange-500 rounded text-white text-xl shadow-md py-2">
                                      Выбрать
-                                 </button> */}
+                                 </button> 
                             </Link>
 
                          </div>
