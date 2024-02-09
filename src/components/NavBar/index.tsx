@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
 
 return (
-    <div className='max-w-7xl mx-auto shadow-md rounded-md px-6 py-2'>
-    <div className="flex justify-between px-10 bg-green-100">
-        <nav className='gap-8 justify-between text-center flex mx-auto my-12 text-2xl font-extrabold tracking-tight text-gray-700'>
+    <div className='max-w-7xl mx-auto shadow-md rounded-md'>
+    <div className="flex justify-between p-4 bg-orange-400">
+        <nav className='gap-8 justify-between text-center flex mx-auto  text-xl font-extrabold tracking-tight text-white'>
             {/* <Link to='/restaurant/:slug'>Рестораны</Link> */}
             <Link to='/'>Главная страница</Link>
         </nav>

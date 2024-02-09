@@ -1,13 +1,13 @@
 import Restaurants from "components/Restaurants/index";
-import RestaurantPage from "components/Restaurants/RestaurantPage";
+
 
 const HomePage = () => {
     return (
         <>
-        <div className="max-w-7xl mx-auto shadow-md rounded-md px-6 py-2">
-        <h1 className="text-centr text-red-600 text-6xl">Home Page</h1>
+        <div className="max-w-7xl mx-auto shadow-md rounded-md py-2 font-serif">
+        <h1 className="text-centr text-grey-500 text-2xl font-bold py-4">Рестораны</h1>
         <Restaurants/>
-        <RestaurantPage/>
+        
         </div>
         </>
     )

@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react"
 import { Link } from "react-router-dom"
+import Button from "./Button"
 
 // import { useParams } from "react-router-dom"
 
@@ -32,12 +33,13 @@ const Restaurants = () => {
                              <img src={restaurant?.image} alt=""
                                  className="h-48 object-cover object-center w-full shadow-md rounded-xl"
                              />
-                             <div className="text-xl text-blue-700 mb-2 font-bold">{restaurant?.name}</div>
-                             <p className="text-centr text-sm leading-5 text-blue-500">{restaurant?.description}</p>
+                             <div className="text-xl text-white bg-orange-400 mb-2 font-bold">{restaurant?.name}</div>
+                             <p className="text-centr text-sm leading-5 text-grey-500">{restaurant?.description}</p>
                              <Link to={`/restaurant/${restaurant.slug}`}>
-                                 <button className="leading-5 bg-blue-600 rounded text-white text-xl shadow-md py-2">
+                                <Button/>
+                                 {/* <button className="leading-5 bg-orange-500 rounded text-white text-xl shadow-md py-2">
                                      Выбрать
-                                 </button>
+                                 </button> */}
                             </Link>
 
                          </div>

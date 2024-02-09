@@ -30,21 +30,24 @@ const RestaurantPage = () => {
 
     return (
         <>
-        <div className="gap-4 flex">
+        <div className="max-w-7xl mx-auto shadow-md rounded-md py-2 font-serif">
          
-            <div className='flex flex-col relative'>
+            <div className=' flex flex-col relative'>
                 <img 
                     src={restaurant?.image} alt=""
-                    className=" object-cover object-center w-full shadow-md"
+                    className="opacity-60 shadow-orange-100 h-72 object-cover object-center w-full shadow-md"
                 />
-                <div className="text-xl text-blue-700 ">{restaurant?.name}</div>
-                <p className="text-lg text-centr text-blue-500">{restaurant?.description}</p>
-
-            </div>  
-            
-          
-         </div> 
+                <div className="text-4xl font-bold text-white bg-orange-400 p-2">{restaurant?.name}</div>
+                <p className="text-lg text-centr text-orange-500">{restaurant?.description}</p>
+                
+                <div className="flex font-sans italic font-medium tracking-tight ">
+                    <p>{restaurant?.address}</p>
+                    <p>{restaurant?.phone}</p> 
+                    
+                </div>
          <MenuOfRestaurant/>  
+         </div> 
+         </div> 
         </>
     )
 }

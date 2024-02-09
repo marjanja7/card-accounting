@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Button from "./Button"
 
 type ItemType = {
     id: number
@@ -41,9 +42,10 @@ const MenuOfRestaurant = () => {
               {Math.round (item.price) } ₽
               </div>
             </div>
-            <button className="leading-5 bg-blue-600 rounded text-white text-xl shadow-md py-2">
+            <Button/>
+            {/* <button className="leading-5 bg-blue-600 rounded text-white text-xl shadow-md py-2">
                                      Корзина
-                                 </button>
+                                 </button> */}
           </div>
         </div>
         )})}
