@@ -30,24 +30,32 @@ const RestaurantPage = () => {
 
     return (
         <>
-        <div className="max-w-7xl mx-auto shadow-md rounded-md py-2 font-serif">
+        <div className="relative max-w-7xl mx-auto shadow-md rounded-md font-serif">
          
-            <div className=' flex flex-col relative'>
-                <img 
-                    src={restaurant?.image} alt=""
-                    className="opacity-60 shadow-orange-100 h-72 object-cover object-center w-full shadow-md"
-                />
-                <div className="text-4xl font-bold text-white bg-orange-400 p-2">{restaurant?.name}</div>
-                <p className="text-lg text-centr text-orange-500">{restaurant?.description}</p>
-                
-                <div className="flex font-sans italic font-medium tracking-tight ">
-                    <p>{restaurant?.address}</p>
-                    <p>{restaurant?.phone}</p> 
-                    
+            <div className=' flex flex-col relative p-4 m-2 bg-white'>
+                <div className="relative ">
+                    <img 
+                        src={restaurant?.image} alt=""
+                        className="h-72 object-cover object-center w-full shadow-md rounded-xl"
+                    />
+                    <div className="absolute top-12 left-0 text-black bg-orange-400 px-4 py-2 rounded-xl">
+                        <span className="text-4xl font-bold">{restaurant?.name}</span>
+                    </div>
+                    <div className="absolute top-40 right-0 bg-white opacity-70 left-80 text-orange-500 text-right px-2 rounded-xl">
+                        <span className="text-lg text-orange-500">{restaurant?.description}</span>
+                    </div>
                 </div>
-         <MenuOfRestaurant/>  
-         </div> 
-         </div> 
+                
+                <div className="h-8 my-5  w-full font-sans italic font-medium tracking-tight bg-orange-200 border rounded-xl">
+                    <div className="flex justify-between ">
+                        <div>{restaurant?.address}</div>
+                        <div>{restaurant?.phone}</div> 
+                        <div>{restaurant?.email}</div>
+                    </div>   
+                </div>
+            <MenuOfRestaurant/>  
+            </div> 
+        </div> 
         </>
     )
 }
