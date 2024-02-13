@@ -38,11 +38,11 @@ const Restaurants = () => {
                             <div className="absolute rounded-xl border top-0 left-0 text-white bg-orange-400  px-3 ">
                                 <span className="text-md ">{restaurant?.cuisine}</span>
                             </div>
-                            <p className="text-xl font-bold rounded-xl border px-2 text-black bg-orange-400">{restaurant?.name}</p>
-                            <p className="text-centr text-sm leading-5 text-grey-500">{restaurant?.description}</p>
+                            <div className="h-12"><p className="text-xl font-bold rounded-xl border px-2 text-black bg-orange-400">{restaurant?.name}</p></div>
+                            <p className="h-36 overflow-y-scroll overscroll-none text-centr text-sm leading-5 text-grey-500">{restaurant?.description}</p>
                             <Link to={`/restaurant/${restaurant.slug}`}>
                                
-                                <button className="leading-5 bg-orange-500 rounded text-white text-xl shadow-md py-2">
+                                <button className="w-full leading-5 bg-orange-500 rounded text-white text-xl shadow-md py-2 mt-1 mb-4 mr-1">
                                      Выбрать
                                  </button> 
                             </Link>

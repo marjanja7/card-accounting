@@ -36,16 +36,12 @@ const MenuOfRestaurant = () => {
           </div>
           <div className="flex flex-col justify-between flex-grow p-8 border border-t-0 rounded-b">
             <div>
-              <div className="text-lg font-semibold ">{item.name}</div>
-              <p className="text-sm text-gray-900">{item.description}</p>
-              <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-5xl">
-              {Math.round (item.price) } ₽
-              </div>
+              <div className="h-14"><p className="text-lg font-semibold  ">{item.name}</p></div>
+              <p className="h-36 overflow-y-scroll text-sm text-gray-900 ">{item.description}</p> 
             </div>
-            
-            {/* <button className="leading-5 bg-blue-600 rounded text-white text-xl shadow-md py-2">
-                                     Корзина
-                                 </button> */}
+            <button 
+              className="leading-5 bg-orange-500 rounded text-black text-2xl shadow-md py-2 mt-1 mb-4 mr-1 font-bold sm:text-3xl">+ {Math.round (item.price) } ₽
+            </button>
           </div>
         </div>
         )})}
