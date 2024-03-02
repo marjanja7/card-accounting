@@ -50,10 +50,10 @@ const Basket = () => {
                             </div>
                       
                             <div className="flex flex-col gap-2">
-                                <Button onClick={() => deleteFromBasket(item.id)}
+                                {/* <Button onClick={() => deleteFromBasket(item.id)}
                                     title={'Удалить'} 
                                     variant='delete'
-                                />
+                                /> */}
                             </div>
                         </div>
                      ))}
