@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import MenuOfRestaurant from "components/Restaurants/MenuOfRestaurant"
+// import Basket from "components/Restaurants/Basket"
 
 type RestaurantType = {
     id: number
@@ -30,6 +31,7 @@ const RestaurantPage = () => {
 
     return (
         <>
+        <div className="flex">
         <div className="relative max-w-7xl mx-auto shadow-md rounded-md font-serif">
          
             <div className=' flex flex-col relative p-4 m-2 bg-white'>
@@ -46,7 +48,7 @@ const RestaurantPage = () => {
                     </div>
                 </div>
                 
-                <div className="h-8 my-5  w-full font-sans italic font-medium tracking-tight bg-orange-200 border rounded-xl">
+                <div className="h-8 my-5  w-full font-sans italic font-medium tracking-tight bg-yellow-200 border rounded-xl">
                     <div className="flex justify-between ">
                         <div>{restaurant?.address}</div>
                         <div>{restaurant?.phone}</div> 
@@ -54,8 +56,11 @@ const RestaurantPage = () => {
                     </div>   
                 </div>
             <MenuOfRestaurant/>  
+            </div>
             </div> 
+            {/* <Basket/> */}
         </div> 
+
         </>
     )
 }
