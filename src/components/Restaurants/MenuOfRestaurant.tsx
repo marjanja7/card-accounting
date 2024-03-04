@@ -14,7 +14,7 @@ export type ItemType = {
     
 }
 
-export type BasketItemType ={
+export type CartItemType ={
   id: number
   itemId: number
   quantity: number
@@ -23,7 +23,7 @@ export type BasketItemType ={
 const MenuOfRestaurant = () => {
     const {slug} = useParams()
     const [items, setItems] = useState<ItemType[]>([])
-    const [basketItems, setBasketItems] = useState<BasketItemType[]>([])
+    const [cartItems, setCartItems] = useState<CartItemType[]>([])
 
     
     useEffect(() => {
@@ -32,27 +32,27 @@ const MenuOfRestaurant = () => {
         .then((data) => setItems(data))
     },[slug])
 
-    const addToBasket = (item: ItemType): void => {
-      const currentBasketItem = basketItems.find(basketItem => basketItem.itemId === item.id)
+    const addToCart = (item: ItemType): void => {
+      const currentCartItem = cartItems.find(cartItem => cartItem.itemId === item.id)
     
-      if (currentBasketItem) {
-        const newBasketItem: BasketItemType = {
-          ...currentBasketItem,
-          quantity: currentBasketItem.quantity + 1
+      if (currentCartItem) {
+        const newCartItem: CartItemType = {
+          ...currentCartItem,
+          quantity: currentCartItem.quantity + 1
         }
-        let newItems = basketItems.filter(basketItem => basketItem.itemId !== currentBasketItem.itemId)
-        setBasketItems([...newItems,newBasketItem])
+        let newItems = cartItems.filter(cartItem => cartItem.itemId !== currentCartItem.itemId)
+        setCartItems([...newItems,newCartItem])
       }else {
-        const newBasketItem: BasketItemType = {
+        const newCartItem: CartItemType = {
           id: 123,
           itemId: item.id,
           quantity: 1
         }
-        setBasketItems([...basketItems, newBasketItem])
+        setCartItems([...cartItems, newCartItem])
       }
     }
     const findCurrentItem = (item: ItemType) => {
-      return basketItems.find( c => c.itemId === item.id)
+      return cartItems.find( c => c.itemId === item.id)
     }
         return (
             <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -77,7 +77,8 @@ const MenuOfRestaurant = () => {
               }
               <button 
                 className="leading-5 bg-orange-500 rounded text-black text-2xl shadow-md py-2 mt-1 mb-4 mr-1 font-bold sm:text-3xl"
-                onClick={() => addToBasket(item)} ><Counter/> 
+                onClick={() => addToCart(item)} >
+                <Counter/> 
               </button>
             </div>
           </div>
