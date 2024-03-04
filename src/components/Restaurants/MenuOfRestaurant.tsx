@@ -1,6 +1,7 @@
 import Counter from 'components/Restaurants/Counter'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+// import Basket from "components/Restaurants/Basket"
 // import Button from "./Button"
 
 export type ItemType = {
@@ -55,6 +56,7 @@ const MenuOfRestaurant = () => {
       return cartItems.find( c => c.itemId === item.id)
     }
         return (
+          <div className='flex'>
             <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
          {items.map((item) => {
             return (
@@ -84,6 +86,8 @@ const MenuOfRestaurant = () => {
           </div>
         </div>
         )})}
+        </div>
+        {/* <Basket/> */}
         </div>
         
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import MenuOfRestaurant from "components/Restaurants/MenuOfRestaurant"
-// import Basket from "components/Restaurants/Basket"
+
 
 type RestaurantType = {
     id: number
@@ -58,7 +58,6 @@ const RestaurantPage = () => {
             <MenuOfRestaurant/>  
             </div>
             </div> 
-            {/* <Basket/> */}
         </div> 
 
         </>
