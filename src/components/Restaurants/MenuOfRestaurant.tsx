@@ -78,9 +78,10 @@ const MenuOfRestaurant = () => {
               <div>{findCurrentItem(item)?.quantity}</div>
               }
               <button 
-                className="leading-5 bg-orange-500 rounded text-black text-2xl shadow-md py-2 mt-1 mb-4 mr-1 font-bold sm:text-3xl"
-                onClick={() => addToCart(item)} >
-                <Counter/> 
+                className="w-full leading-5 bg-orange-500 rounded text-black text-md shadow-md py-2 mt-1 font-bold sm:text-xl"
+
+                onClick={() => addToCart(item)} >Выбрать
+                {/* <Counter/>  */}
               </button>
             </div>
           </div>
