@@ -7,7 +7,7 @@ import Counter from "./Counter"
 
 const Cart = () => {
 
-  const [cartItems, setCartItems] = useState(JSON.parse[localStorage.getItem('cartItems')] || [] )  
+  const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cartItems'))|| [] )  
   useEffect(() => {
     localStorage.setItem('cartItems' , JSON.stringify(cartItems));
   }, [cartItems])
@@ -40,8 +40,8 @@ const Cart = () => {
                   </div> 
                 </div>
                 ):(
-                <div max-w-4xl m-auto px-6 py-10 >
-                    <p className="text-3xl pb-10 font-bold text-slate-400">Ваш заказ:</p>
+                <div className="max-w-4xl m-auto px-6 py-10 ">
+                    <p className="text-3xl pb-10 font-bold text-grey-400">Ваш заказ:</p>
                     <div className="flex flex-col items-center gap-10">
                         <div className="flex flex-col gap-4 px-4 py-5 bg-slate-100 rounded-2xl justify-between ">
                             {cartItems.map((item) => {
