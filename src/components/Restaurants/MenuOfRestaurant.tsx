@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { v4 as uuidv4} from 'uuid'
+// import {HiMinus, HiPlus} from 'react-icons'
 // import Basket from "components/Restaurants/Basket"
 // import Button from "./Button"
 
@@ -44,7 +45,7 @@ const MenuOfRestaurant = () => {
       localStorage.setItem('cartItems' , JSON.stringify(cartItems))
     }, [cartItems])
 
-    const addToCart = (item: ItemType): void => {
+    const addQuantity = (item: ItemType): void => {
       const currentCartItem = cartItems.find(cartItem => cartItem.itemId === item.id)
     
       if (currentCartItem) {
@@ -138,15 +139,15 @@ const MenuOfRestaurant = () => {
               <div 
                 className="flex justify-center py-2 gap-5 rounded-b-xl items-center text-xl">
                  <div className="flex gap-4 text-xl justify-center">
-           <button title="-" onClick={() => reduceQuantity(item)}  className="mx-10 bg-orange-500 rounded-lg text-white text-xl px-4 shadow-md" />
+           <button onClick={() => reduceQuantity(item)}  className="mx-10 bg-orange-400 rounded-lg text-black text-2xl px-4 shadow-md font-bold"> - </button>
            {findCurrentItem(item) && (
                <div>{findCurrentItem(item)?.quantity}</div>)}
-           <button title="+" onClick={() => addToCart(item)}  className="mx-10 bg-orange-500 rounded-lg text-white text-xl px-4 shadow-md"/>
+           <button onClick={() => addQuantity(item)}  className="mx-10 bg-orange-400 rounded-lg text-black text-xl px-4 shadow-md font-bold "> + </button>
         </div>
                
               </div>
               ):(
-                <button className='hover:text-black font-bold' onClick={() => addToCart(item)}>
+                <button className='w-full leading-5 bg-orange-500 rounded text-white text-xl shadow-md py-2 hover:text-black font-bold' onClick={() => addQuantity(item)}>
                   Заказать
 
                 </button>
@@ -155,6 +156,7 @@ const MenuOfRestaurant = () => {
           </div>
         </div>
         )})}
+       
         </div>
         </div>
 )
