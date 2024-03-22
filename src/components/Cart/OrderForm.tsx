@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react"
 import Button from "components/Restaurants/Button"
-import {CartItemType} from "components/Restaurants/MenuOfRestaurant"
+// import {CartItemType} from "components/Restaurants/MenuOfRestaurant"
 
 
- type OrderType = {
-    customerName: string
-    phone: number
-    email: string
-    restaurantId: number
-    cartItems: [item : { itemId: number; quantity: number; price: number}]
-}
+//  type OrderType = {
+//     customerName: string
+//     phone: number
+//     email: string
+//     restaurantId: number
+//     cartItems: [item : { itemId: number; quantity: number; price: number}]
+// }
 
 const OrderForm = () => {
     const [cartItems] = useState(
