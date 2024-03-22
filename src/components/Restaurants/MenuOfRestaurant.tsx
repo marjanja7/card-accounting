@@ -46,6 +46,10 @@ const MenuOfRestaurant = () => {
     }, [cartItems])
 
     const addQuantity = (item: ItemType): void => {
+
+      // if (item.restaurantId === cartItems[0].restaurantId){
+
+      // }
       const currentCartItem = cartItems.find(cartItem => cartItem.itemId === item.id)
     
       if (currentCartItem) {

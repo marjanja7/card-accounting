@@ -3,7 +3,7 @@ import Button from "components/Restaurants/Button"
 import {CartItemType} from "components/Restaurants/MenuOfRestaurant"
 
 
-export type OrderType = {
+ type OrderType = {
     customerName: string
     phone: number
     email: string
@@ -32,21 +32,13 @@ const OrderForm = () => {
     // let [isOpen, setIsOpen] = useState(false)
     // let [warning, setWarning] = useState(false)
 
+    
+
     const handleSubmitForm = (event: any) => {
         event.preventDefault()
 
-        const reguestBody = {
-            customerName,
-            phone,
-            email,
-            restaurantId: cartItems[0].restaurantId,
-            cartItems: cartItems.map((item: CartItemType) => ({
-            name: item.name,
-            quantity: item.quantity,
-            price: item.price
-            }))
-        }
-        
+    
+
         if (customerName === '') {
             setCustomerNameError(true)
           return
@@ -59,6 +51,23 @@ const OrderForm = () => {
             setEmailError(true)
           return
         }
+
+        const reguestBody = {
+            customerName,
+            phone,
+            email,
+            restaurantId: cartItems[0].restaurantId,
+            cartItems: cartItems.map((item:any) => ({
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price
+            }))
+        }
+        
+        const clearCart = () => {
+            cartItems([]) 
+        }
+
         if (customerName === '' || phone === '' || email === '') {
             return
         }
@@ -78,12 +87,6 @@ const OrderForm = () => {
             }
                })
     }
-
-
-    const clearCart = () => {
-        cartItems([]) 
-    }
-
 
     return (
         
@@ -176,7 +179,7 @@ const OrderForm = () => {
                     </div>
                     <div className="flex gap-4 justify-center pt-3">
                         <Button
-                        
+                        onChange={handleSubmitForm}
                         title='Отправить'
                         type='submit'
                         variant='orange'
